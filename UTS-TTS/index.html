@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TEKA TEKI SILANG</title>
+    <!-- Gunakan Bootstrap CSS dari CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Gunakan Bootstrap JavaScript dari CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+
+    <!--Link font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>PERMAINAN TEKA TEKI SILANG</h1>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div id="clues-root">
+            <!-- Teks clue akan ditampilkan di sini -->
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div id="tabel-root">
+            <!-- Tabel TTS akan ditampilkan di sini -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      function CluesList({ title, items }) {
+        return (
+          <div className="clues-container">
+            <div className={`clues-${title.toLowerCase()}`}>
+              <h4>{title}</h4>
+              <ol>
+                {items.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ol>
+            </div>
+          </div>
+        );
+      }
+
+      function TabelTTS() {
+        return (
+          <div className="tabel-container">
+            <div className="row">
+              <div className="col">
+                <table className="tabel">
+                  <tbody>
+                    {/* Baris 1 */}
+                    <tr>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block">
+                        <div className="box">
+                          <input
+                            className="menurun1a"
+                            type="text"
+                            maxLength="1"
+                          />
+                          <span className="number">7</span>
+                        </div>
+                      </td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                    </tr>
+
+                    <tr>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block">
+                        <input
+                          className="menurun1b"
+                          type="text"
+                          maxLength="1"
+                        />
+                      </td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                    </tr>
+
+                    <tr>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block">
+                        <input
+                          className="menurun1c"
+                          type="text"
+                          maxLength="1"
+                        />
+                      </td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                    </tr>
+
+                    <tr>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block">
+                        <input
+                          className="menurun1d"
+                          type="text"
+                          maxLength="1"
+                        />
+                      </td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                    </tr>
+
+                    <tr>
+                      <td className="block">
+                        <div className="box">
+                          <input
+                            className="menurun2a"
+                            type="text"
+                            maxlength="1"
+                          />
+                          <span className="number">6</span>
+                        </div>
+                      </td>
+                      <td className="block"></td>
+                      <td className="block">
+                        <div className="box">
+                          <input
+                            className="menurun3a"
+                            type="text"
+                            maxlength="1"
+                          />
+                          <span className="number">5</span>
+                        </div>
+                      </td>
+                      <td className="block"></td>
+                      <td className="block">
+                        <input
+                          className="menurun1e"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                    </tr>
+
+                    <tr>
+                      <td className="block">
+                        <input
+                          className="menurun2b"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block"></td>
+                      <td className="block">
+                        <input
+                          className="menurun3b"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block"></td>
+                      <td className="block">
+                        <input
+                          className="menurun1f"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                    </tr>
+
+                    <tr>
+                      <td className="block">
+                        <div className="box">
+                          <input
+                            className="mendatar1a"
+                            type="text"
+                            maxlength="1"
+                          />
+                          <span className="number">1</span>
+                        </div>
+                      </td>
+                      <td className="block">
+                        <input
+                          className="mendatar1b"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block">
+                        <input
+                          className="mendatar1c"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block">
+                        <input
+                          className="mendatar1d"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block">
+                        <input
+                          className="mendatar1e"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block">
+                        <input
+                          className="mendatar1f"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block">
+                        <input
+                          className="mendatar1g"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                    </tr>
+
+                    <tr>
+                      <td className="block">
+                        <input
+                          className="menurun2c"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block"></td>
+                      <td className="block">
+                        <input
+                          className="menurun3c"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block"></td>
+                      <td className="block">
+                        <input
+                          className="menurun1g"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                    </tr>
+
+                    <tr>
+                      <td className="block">
+                        <input
+                          className="menurun2d"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block"></td>
+                      <td className="block">
+                        <input
+                          className="menurun3d"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block">
+                        <div class="box">
+                          <input
+                            className="menurun4a"
+                            type="text"
+                            maxlength="1"
+                          />
+                          <span className="number">8</span>
+                        </div>
+                      </td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                    </tr>
+
+                    <tr>
+                      <td className="block">
+                        <input
+                          className="menurun2e"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block">
+                        <input
+                          className="menurun4b"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                    </tr>
+
+                    <tr>
+                      <td className="block">
+                        <div className="box">
+                          <input
+                            className="menurun2f"
+                            type="text"
+                            maxlength="1"
+                          />
+                          <span className="number">2</span>
+                        </div>
+                      </td>
+                      <td className="block">
+                        <input
+                          className="mendatar2a"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block">
+                        <input
+                          className="mendatar2b"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block">
+                        <input
+                          className="mendatar2c"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block"></td>
+                      <td className="block">
+                        <input
+                          className="menurun4c"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                    </tr>
+
+                    <tr>
+                      <td className="block">
+                        <input
+                          className="menurun2g"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block">
+                        <div className="box">
+                          <input
+                            className="menurun4d"
+                            type="text"
+                            maxlength="1"
+                          />
+                          <span className="number">4</span>
+                        </div>
+                      </td>
+                      <td className="block">
+                        <input
+                          className="mendatar3a"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block">
+                        <input
+                          className="mendatar3b"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block">
+                        <input
+                          className="mendatar3c"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block">
+                        <input
+                          className="mendatar3d"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block">
+                        <input
+                          className="mendatar3e"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td className="block">
+                        <input
+                          className="menurun2h"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block">
+                        <input
+                          className="menurun4e"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                    </tr>
+
+                    <tr>
+                      <td className="block">
+                        <input
+                          className="menurun2i"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block">
+                        <input
+                          className="menurun4f"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                    </tr>
+
+                    <tr>
+                      <td className="block">
+                        <div className="box">
+                          <input class="menurun2j" type="text" maxlength="1" />
+                          <span class="number">3</span>
+                        </div>
+                      </td>
+                      <td className="block">
+                        <input
+                          className="mendatar4a"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block">
+                        <input
+                          className="mendatar4b"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block">
+                        <input
+                          className="mendatar4c"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block">
+                        <input
+                          className="mendatar4d"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block">
+                        <input
+                          className="mendatar4e"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                    </tr>
+
+                    <tr>
+                      <td className="block">
+                        <input
+                          className="menurun2k"
+                          type="text"
+                          maxlength="1"
+                        />
+                      </td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                      <td className="block"></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <button onClick={checkAnswers}>Periksa Jawaban</button>
+              </div>
+            </div>
+          </div>
+        );
+      }
+
+      const pertanyaanItems = [
+        "Piknik",
+        "Jauh dimata dekat dihati",
+        "Hitam waktu muda, putih waktu tua",
+        "Ketidakjelasan",
+        "Nasi lembek",
+        "Pulau di selatan Selat Sunda",
+        "Perangkat lunak",
+        "Kendaraan terbang",
+      ];
+
+      const tabelTTS = <TabelTTS />;
+
+      const cluesPertanyaan = (
+        <CluesList title="Clue" items={pertanyaanItems} />
+      );
+
+      function checkAnswers() {
+        // Dapatkan semua elemen input di dalam tabel TTS
+        const inputElements = document.querySelectorAll(".block input");
+
+        // Inisialisasi variabel jawaban benar dan hitungan jawaban benar
+        const correctAnswers = {
+          mendatar1a: "L",
+          mendatar1b: "I",
+          mendatar1c: "B",
+          mendatar1d: "U",
+          mendatar1e: "R",
+          mendatar1f: "A",
+          mendatar1g: "N",
+
+          mendatar2a: "S",
+          mendatar2b: "U",
+          mendatar2c: "S",
+
+          mendatar3a: "M",
+          mendatar3b: "B",
+          mendatar3c: "I",
+          mendatar3d: "G",
+          mendatar3e: "U",
+
+          mendatar4a: "A",
+          mendatar4b: "M",
+          mendatar4c: "B",
+          mendatar4d: "U",
+          mendatar4e: "T",
+
+          menurun1a: "S",
+          menurun1b: "O",
+          menurun1c: "F",
+          menurun1d: "T",
+          menurun1e: "W",
+          menurun1f: "A",
+          menurun1g: "E",
+
+          menurun2a: "P",
+          menurun2b: "U",
+          menurun2c: "A",
+          menurun2d: "U",
+          menurun2e: "S",
+          menurun2f: "U",
+          menurun2g: "M",
+          menurun2h: "A",
+          menurun2i: "T",
+          menurun2j: "R",
+          menurun2k: "A",
+
+          menurun3a: "B",
+          menurun3b: "U",
+          menurun3c: "U",
+          menurun3d: "R",
+
+          menurun4a: "P",
+          menurun4b: "E",
+          menurun4c: "S",
+          menurun4d: "A",
+          menurun4e: "W",
+          menurun4f: "A",
+        };
+
+        let correctCount = 0;
+
+        // Loop melalui elemen-elemen input dan periksa jawaban
+        inputElements.forEach((input) => {
+          const className = input.className;
+          const inputValue = input.value.toUpperCase(); // Ambil nilai input dalam huruf besar
+          if (correctAnswers[className] === inputValue) {
+            input.style.backgroundColor = "lightgreen"; // Warna latar belakang hijau untuk jawaban benar
+            correctCount++;
+          } else {
+            input.style.backgroundColor = "#FF6969"; // Warna latar belakang merah untuk jawaban salah
+          }
+        });
+
+        // Tampilkan pesan sesuai dengan hasil periksa jawaban
+        const resultMessage =
+          correctCount === Object.keys(correctAnswers).length
+            ? "Jawaban benar!"
+            : "Jawaban salah. Coba lagi.";
+
+        // Tampilkan pesan hasil di elemen dengan id "tabel-root"
+        const tabelRoot = document.getElementById("tabel-root");
+        const messageElement = document.createElement("p");
+        messageElement.textContent = resultMessage;
+        tabelRoot.appendChild(messageElement);
+      }
+
+      ReactDOM.render(cluesPertanyaan, document.getElementById("clues-root"));
+      ReactDOM.render(tabelTTS, document.getElementById("tabel-root"));
+    </script>
+  </body>
+</html>
